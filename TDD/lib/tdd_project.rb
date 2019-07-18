@@ -5,13 +5,17 @@ class Array
     self.each do |ele|
       hash[ele] += 1
     end
-    # i = 0
-    # while i < self.length
-    #   hash[self[i]]
-    #   i += 1
-    # end
     hash.keys
   end
 
+  def two_sum
+    ret = []
+    (0...self.length).each do |i|
+      (i+1...self.length).each do |j|
+        ret << [i, j] if self[i] + self[j] == 0
+      end
+    end
+    ret
+  end
 
 end
